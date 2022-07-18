@@ -168,13 +168,8 @@ img {
 #HamburgerMenuwithCheckbox input {
   display: none;
 }
-#HamburgerMenuwithCheckbox button {
-  all: unset;
+#HamburgerMenuwithCheckbox .nav {
   cursor: pointer;
-  display: block;
-}
-#HamburgerMenuwithCheckbox button * {
-  pointer-events: none;
 }
 #HamburgerMenuwithCheckbox .nav-burger {
   width: 31px;

@@ -28,7 +28,7 @@ img {
 
 ////
 // smooth full page swipe effect
-//
+////
 // Y ver.
 #fullPageSwipeEffectY {
   .scroll-container {
@@ -75,15 +75,8 @@ img {
   input {
     display: none;
   }
-  button {
-    all: unset;
-    cursor: pointer;
-    display: block;
-    * {
-      pointer-events: none;
-    }
-  }
   .nav {
+    cursor: pointer;
     &-burger {
       width: 31px;
       height: 31px;
@@ -129,12 +122,4 @@ img {
     transition-delay: 0.1s;
     transform: rotateZ(-45deg);
   }
-  // input:checked + label .line.bottom {
-  //   transform: none;
-  //   transition-delay: 0.1s;
-  // }
-  // input:checked + label .line.top {
-  //   transform: none;
-  //   transition-delay: 0.1s;
-  // }
 }
