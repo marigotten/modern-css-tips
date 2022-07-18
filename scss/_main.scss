@@ -7,7 +7,7 @@ img {
     height: 100vh;
     display: block;
     object-fit: cover;
-    position: relative;  
+    position: relative;
   }
   .title-1 {
     height: 200vh;
@@ -20,5 +20,48 @@ img {
   }
   .title-2 {
     margin-top: -100vh;
+  }
+}
+
+////
+// smooth full page swipe effect
+//
+// Y ver.
+#fullPageSwipeEffectY {
+  .scroll-container {
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    .section {
+      height: 100vh;
+      height: 100dvh;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+  }
+}
+// X ver.
+#fullPageSwipeEffectX {
+  .scroll-container {
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    .section {
+      height: 100vh;
+      height: 100dvh;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
   }
 }

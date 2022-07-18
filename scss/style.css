@@ -115,4 +115,45 @@ img {
 }
 #swipeOverSections .title-2 {
   margin-top: -100vh;
+}
+
+#fullPageSwipeEffectY .scroll-container {
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: scroll;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+#fullPageSwipeEffectY .scroll-container .section {
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+#fullPageSwipeEffectX .scroll-container {
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-x: scroll;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+}
+#fullPageSwipeEffectX .scroll-container .section {
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }/*# sourceMappingURL=style.css.map */
