@@ -1,3 +1,6 @@
+body {
+  margin: 0;
+}
 img {
   width: 100%;
 }
@@ -64,4 +67,74 @@ img {
       scroll-snap-stop: always;
     }
   }
+}
+
+// Hamburger Menu like Apple
+#HamburgerMenuwithCheckbox {
+  background-color: #666;
+  input {
+    display: none;
+  }
+  button {
+    all: unset;
+    cursor: pointer;
+    display: block;
+    * {
+      pointer-events: none;
+    }
+  }
+  .nav {
+    &-burger {
+      width: 31px;
+      height: 31px;
+      display: block;
+      position: relative;
+    }
+    &-burger-container {
+      position: absolute;
+      left: 7px;
+      top: 15px;
+      transition: transform 0.2s ease-in-out 0.1s;
+      &__top {
+        transform: translateY(-3px) scaleX(0.88235);
+      }
+      &__bottom {
+        transform: translateY(3px) scaleX(0.88235);
+      }
+    }
+    .line {
+      width: 17px;
+      height: 1px;
+      border-radius: 3px;
+      background: #fff;
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+  input:checked + label .nav-burger-container {
+    transition-delay: 0s;
+  }
+  input:checked + label .nav-burger-container__bottom {
+    transform: none;
+  }
+  input:checked + label .nav-burger-container__top {
+    transform: none;
+  }
+  input:checked + label .nav-burger-container__bottom .line {
+    transform: none;
+    transition-delay: 0.1s;
+    transform: rotateZ(45deg);
+  }
+  input:checked + label .nav-burger-container__top .line {
+    transform: none;
+    transition-delay: 0.1s;
+    transform: rotateZ(-45deg);
+  }
+  // input:checked + label .line.bottom {
+  //   transform: none;
+  //   transition-delay: 0.1s;
+  // }
+  // input:checked + label .line.top {
+  //   transform: none;
+  //   transition-delay: 0.1s;
+  // }
 }

@@ -92,6 +92,10 @@ meter {
   -webkit-user-drag: element;
 }
 
+body {
+  margin: 0;
+}
+
 img {
   width: 100%;
 }
@@ -156,4 +160,63 @@ img {
      object-position: center;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+}
+
+#HamburgerMenuwithCheckbox {
+  background-color: #666;
+}
+#HamburgerMenuwithCheckbox input {
+  display: none;
+}
+#HamburgerMenuwithCheckbox button {
+  all: unset;
+  cursor: pointer;
+  display: block;
+}
+#HamburgerMenuwithCheckbox button * {
+  pointer-events: none;
+}
+#HamburgerMenuwithCheckbox .nav-burger {
+  width: 31px;
+  height: 31px;
+  display: block;
+  position: relative;
+}
+#HamburgerMenuwithCheckbox .nav-burger-container {
+  position: absolute;
+  left: 7px;
+  top: 15px;
+  transition: transform 0.2s ease-in-out 0.1s;
+}
+#HamburgerMenuwithCheckbox .nav-burger-container__top {
+  transform: translateY(-3px) scaleX(0.88235);
+}
+#HamburgerMenuwithCheckbox .nav-burger-container__bottom {
+  transform: translateY(3px) scaleX(0.88235);
+}
+#HamburgerMenuwithCheckbox .nav .line {
+  width: 17px;
+  height: 1px;
+  border-radius: 3px;
+  background: #fff;
+  transition: transform 0.2s ease-in-out;
+}
+#HamburgerMenuwithCheckbox input:checked + label .nav-burger-container {
+  transition-delay: 0s;
+}
+#HamburgerMenuwithCheckbox input:checked + label .nav-burger-container__bottom {
+  transform: none;
+}
+#HamburgerMenuwithCheckbox input:checked + label .nav-burger-container__top {
+  transform: none;
+}
+#HamburgerMenuwithCheckbox input:checked + label .nav-burger-container__bottom .line {
+  transform: none;
+  transition-delay: 0.1s;
+  transform: rotateZ(45deg);
+}
+#HamburgerMenuwithCheckbox input:checked + label .nav-burger-container__top .line {
+  transform: none;
+  transition-delay: 0.1s;
+  transform: rotateZ(-45deg);
 }/*# sourceMappingURL=style.css.map */
