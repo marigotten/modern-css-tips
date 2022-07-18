@@ -1,0 +1,30 @@
+img {
+  width: 100%;
+}
+// Swipe-over sections like Apple
+#swipeOverSections {
+  img {
+    height: 100vh;
+    display: block;
+    object-fit: contain;
+    position: relative;  
+  }
+  .title-1 {
+    height: 200vh;
+    pointer-events: none;
+    &__inner {
+      height: 100vh;
+      position: sticky;
+      top: 0;
+      object-fit: cover;
+      background: #fff;
+    }
+  }
+  .title-2 {
+    margin-top: -100vh;
+    background: #222;
+  }
+  .title-3 {
+    background: #222;
+  }
+}
