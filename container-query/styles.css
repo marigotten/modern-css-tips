@@ -1,0 +1,69 @@
+.wrapper-grid {
+  display: grid;
+  gap: 1.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.container {
+  container-type: inline-size;
+  display: grid;
+}
+
+.card {
+  display: grid;
+}
+
+.card:has(.visual) {
+  grid-template-columns: 1fr 1fr;
+}
+
+.card:has(.visual) h2 {
+  font-size: 2rem;
+}
+
+.card:not(:has(.visual)) h2 {
+  font-size: clamp(2rem, 15cqi, 4rem);
+  font-weight: 300;
+}
+
+@container (max-width: 400px) {
+  .card:has(.visual) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* since the card stretches in the row, when it gets too tall
+we want it to also go to a 1-column layout */
+@container (min-height: 300px) {
+  .card:has(.visual) {
+    grid-template-columns: 1fr;
+  }
+}
+
+body {
+  font-family: system-ui;
+  padding: 0 1rem;
+}
+
+h1 {
+  text-align: center;
+  padding: 1rem;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.card {
+  background: hsl(240deg 50% 20% / 80%);
+  padding: 1rem;
+  color: thistle;
+  border: 1px solid mediumpurple;
+  gap: 1rem;
+}
+
+.visual { 
+  background: hsl(300deg 25% 70% / 25%);
+  display: grid;
+  place-items: center;
+  font-size: 96px;
+  min-height: 10rem;
+}
