@@ -1,0 +1,62 @@
+body {
+  /* exclusionに影響するので背景色はきちんと指定 */
+  background: #fff;
+}
+.mousestalker-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transform: translate3d(50vw, 50vh, 0);
+  pointer-events: none;
+}
+.mousestalker {
+  width: 48px;
+  height: 48px;
+  margin: -48px 0 0 -48px;
+  border-radius: 50%;
+  border: 1px solid #383838;
+  display: grid;
+  place-content: center;
+  opacity: 0;
+}
+.mousestalker-inner {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.8s ease-out;
+}
+.mousestalker-inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(
+    from 20deg,
+    rgba(223, 168, 168, .6) 18deg,
+    rgba(193, 199, 197, .6) 68deg,
+    rgba(108, 199, 221, .6) 151deg,
+    rgba(177, 151, 223, .6) 263deg,
+    rgba(122, 197, 216, .6) 295deg,
+    rgba(223, 168, 168, .6) 360deg
+  );
+}
+#mousestalker.g-ms-active .mousestalker {
+  opacity: 1;
+}
+.mousestalker-wrapper.g-ms-hover {
+  mix-blend-mode: hard-light;
+}
+.mousestalker-wrapper.g-ms-hover .mousestalker {
+  border: none;
+}
+.mousestalker-wrapper.g-ms-hover .mousestalker-inner {
+  background: #fff;
+  transform: scale(.8);
+}
